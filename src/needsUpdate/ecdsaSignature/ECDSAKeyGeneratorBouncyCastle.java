@@ -1,4 +1,4 @@
-package ecdsaSignature;
+package needsUpdate.ecdsaSignature;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -11,7 +11,7 @@ public class ECDSAKeyGeneratorBouncyCastle {
             NoSuchProviderException {
 
         //It is required to use an epileptic Curve with Security Strength <= Security Strength of the used Hashing Function
-        //e.g. SHA512 Security Strength = 256bit paired with "brainpoolP512r1" Curve = 256bit
+        //e.g. needsUpdate.SHA512 Security Strength = 256bit paired with "brainpoolP512r1" Curve = 256bit
         ECGenParameterSpec ecCurve = new ECGenParameterSpec("brainpoolP512r1");
         KeyPairGenerator generator = KeyPairGenerator.getInstance("EC", "BC");
         generator.initialize(ecCurve, SecureRandom.getInstanceStrong());

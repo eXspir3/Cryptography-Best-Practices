@@ -1,4 +1,4 @@
-package rsaEncryption;
+package needsUpdate.rsaSignature;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -14,7 +14,6 @@ public class RsaKeyGenerator {
     //the insecure SHA1PRNG
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
-
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(3072, SecureRandom.getInstanceStrong());
         return generator.generateKeyPair();

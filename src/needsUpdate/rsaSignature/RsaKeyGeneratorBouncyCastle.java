@@ -1,4 +1,4 @@
-package rsaSignature;
+package needsUpdate.rsaSignature;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 

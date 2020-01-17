@@ -1,4 +1,4 @@
-package ecdsaSignature;
+package needsUpdate.ecdsaSignature;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -9,9 +9,9 @@ public class ECDSASignBouncyCastle {
     public static byte[] sign(byte[] data, PrivateKey privateKey) throws NoSuchAlgorithmException, SignatureException,
             InvalidKeyException, NoSuchProviderException {
 
-        //Initialize ECDSA Signature with SHA512
+        //Initialize ECDSA Signature with needsUpdate.SHA512
         //It is required to use a Hash Function with Security Strength >= Security Strength of the used ECDSA epileptic Curve
-        //e.g. SHA512 Security Strength = 256bit paired with "brainpoolP512r1" Curve = 256bit
+        //e.g. needsUpdate.SHA512 Security Strength = 256bit paired with "brainpoolP512r1" Curve = 256bit
         Signature ecSignature = Signature.getInstance("SHA512withECDSA", "BC");
 
         //Load privateKey
@@ -27,7 +27,7 @@ public class ECDSASignBouncyCastle {
     public static boolean verify(byte[] data, byte[] signature, PublicKey publicKey) throws NoSuchAlgorithmException, SignatureException,
             InvalidKeyException, NoSuchProviderException {
 
-        //Initialize ECDSA Signature with SHA512
+        //Initialize ECDSA Signature with needsUpdate.SHA512
         Signature ecSignature = Signature.getInstance("SHA512withECDSA", "BC");
 
         //Initialize Verifing of Signature

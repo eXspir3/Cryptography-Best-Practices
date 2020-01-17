@@ -1,4 +1,4 @@
-package chaCha20Poly1305Encryption;
+package needsUpdate.chaCha20Poly1305Encryption;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;

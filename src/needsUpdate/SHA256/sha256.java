@@ -1,16 +1,16 @@
-package SHA512;
+package needsUpdate.SHA256;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-class sha512 {
-    public static String getSHA512(String unhashed) throws NoSuchAlgorithmException{
+class sha256 {
+    public static String getSHA256(String unhashed) throws NoSuchAlgorithmException{
 
-        //Static Instance for SHA512 Hashing
-        MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
+        //Static Instance for needsUpdate.SHA256 Hashing
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 
-        //digest () calculates SHA-512 Hash from unhashed
+        //digest () calculates SHA-256 Hash from unhashed
         byte[] digestedMessage = messageDigest.digest(unhashed.getBytes());
 
         // Gets the Sign Representation of the digestedMessage
@@ -28,11 +28,11 @@ class sha512 {
 
     //Main for Testing Purpose
     public static void main(String[] args){
-        System.out.println("SHA512 Hash for \"testtest\": ");
-        try{
-            System.out.println(getSHA512("testtest"));
-        } catch(NoSuchAlgorithmException e) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println("needsUpdate.SHA256 Hash for \"testtest\": ");
+    try{
+        System.out.println(getSHA256("testtest"));
+    } catch(NoSuchAlgorithmException e) {
+        System.out.println(e.getMessage());
+    }
     }
 }
