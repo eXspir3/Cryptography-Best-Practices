@@ -9,7 +9,7 @@ I aim to choose secure Paremters for the Cryptographic Functions and also explai
 Currently the following Crypto-Algo-Implementations are finished and to my best knowledge secure to use:
 
 ## Asymmetric-Encryption:
-* RSAAsymmetricEncryption - RSA-4096-OAEPWithSHA-512AndMGF1Padding
+* RSAAsymmetricEncryption.java using "RSA-4096 with OAEP-SHA512MGF1Padding"
 
 ### As you may have noticed this repo is work in Progress as only the RSAAsymmetricEncryption.java is currently finished.
 ### Several more Implementation will come next month
