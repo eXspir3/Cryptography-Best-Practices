@@ -10,6 +10,9 @@ import java.security.*;
 import java.security.spec.MGF1ParameterSpec;
 import java.security.spec.RSAKeyGenParameterSpec;
 
+/**
+* Comment missing - explaination why oaepsha-512mgf1 is secure
+*/
 public class RSAAsymmetricEncryption {
 
     static final String KEYGENERATION_ALGORITHM = "RSA";
