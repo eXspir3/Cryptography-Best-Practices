@@ -63,7 +63,7 @@ public class Argon2iHashSecure {
                 "ITERATIONS_PER_CALL" such that the running time does not exceed x. If it exceeds x (time) even for
                 "ITERATIONS_PER_CALL" = 10, reduce memory "MEMORY_PER_CALL_IN_KILOBYTES" accordingly.
 
-            7.  Hash all the passwords with the just determined values "MEMORY_PER_CALL_IN_KILOBYTES", "THREAD_COUNT" and
+            7.  cryptographyJava.Hash all the passwords with the just determined values "MEMORY_PER_CALL_IN_KILOBYTES", "THREAD_COUNT" and
                 "ITERATIONS_PER_CALL".
 
      */
@@ -76,10 +76,10 @@ public class Argon2iHashSecure {
     static final int THREAD_COUNT = 4;
 
     /**
-     * Hash a given String using argon2i
+     * cryptographyJava.Hash a given String using argon2i
      *
      * @param plainText plainText to be hashed
-     * @return Argon2i Hash of plainText
+     * @return Argon2i cryptographyJava.Hash of plainText
      */
     public static String hash(String plainText) throws NoSuchAlgorithmException {
         Security.addProvider(new BouncyCastleProvider());
@@ -108,7 +108,7 @@ public class Argon2iHashSecure {
         //Choose the Number of CPU-Threads you can afford each call (2 Cores = 4 Threads)
         builder.withParallelism(THREAD_COUNT);
 
-        //Choose a "salt" which can be stored non-secure or with the plainText Hash
+        //Choose a "salt" which can be stored non-secure or with the plainText cryptographyJava.Hash
         builder.withSalt(salt);
 
         //Choose a Secret "pepper" which has to be stored in a different secure location from the hashes

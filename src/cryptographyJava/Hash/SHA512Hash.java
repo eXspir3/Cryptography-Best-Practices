@@ -18,17 +18,17 @@ public class SHA512Hash {
     public static final String ALGORITHM = "SHA-512";
 
     /**
-     * Generate a SHA512 Hash of a given PlainText
+     * Generate a SHA512 cryptographyJava.Hash of a given PlainText
      *
      * @param plainText plainText to be Hashed
-     * @return SHA512 Hash of plainText
+     * @return SHA512 cryptographyJava.Hash of plainText
      */
     public static String hash(String plainText) throws NoSuchAlgorithmException {
 
         //Static Instance for SHA512 Hashing
         MessageDigest messageDigest = MessageDigest.getInstance(ALGORITHM);
 
-        //digest () calculates SHA-512 Hash from plainText
+        //digest () calculates SHA-512 cryptographyJava.Hash from plainText
         byte[] digestedMessage = messageDigest.digest(plainText.getBytes());
 
         // Gets the Sign Representation of the digestedMessage

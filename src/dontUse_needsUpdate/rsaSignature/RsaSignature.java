@@ -1,17 +1,17 @@
-package needsUpdate.rsaSignature;
+package dontUse_needsUpdate.rsaSignature;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import needsUpdate.rsaEncryption.RsaKeyGeneratorBouncyCastle;
+import dontUse_needsUpdate.rsaEncryption.RsaKeyGenerator;
 
 import java.security.*;
 import java.security.spec.MGF1ParameterSpec;
 import java.security.spec.PSSParameterSpec;
 
-public class RsaSignatureBouncyCastle {
+public class RsaSignature {
     public static byte[] sign(byte[] data, PrivateKey privateKey) throws NoSuchAlgorithmException, SignatureException,
-            InvalidKeyException, NoSuchProviderException, InvalidAlgorithmParameterException {
+            InvalidKeyException, InvalidAlgorithmParameterException {
+
         //Initialize RSA PSS with needsUpdate.SHA512
-        Signature privSignature  = Signature.getInstance("SHA512withRSA/PSS", "BC");
+        Signature privSignature  = Signature.getInstance("RSASSA-PSS");
         privSignature.setParameter(new PSSParameterSpec("SHA-512", "MGF1", MGF1ParameterSpec.SHA512, 32, 1));
 
         //Initialize Signing of Data and provide Private Key
@@ -21,13 +21,14 @@ public class RsaSignatureBouncyCastle {
         privSignature.update(data);
 
         //Sign data and store in byte array
-        byte[] signature = privSignature.sign();
-        return signature;
+
+        return privSignature.sign();
     }
 
-    public static boolean verify(byte[] data, byte[] signature, PublicKey publicKey) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException, NoSuchProviderException, InvalidAlgorithmParameterException {
+    public static boolean verify(byte[] data, byte[] signature, PublicKey publicKey) throws NoSuchAlgorithmException,
+            InvalidKeyException, SignatureException, InvalidAlgorithmParameterException {
         //Initialize RSA PSS with needsUpdate.SHA512
-        Signature pubSignature = Signature.getInstance("SHA512withRSA/PSS", "BC");
+        Signature pubSignature = Signature.getInstance("RSASSA-PSS");
         pubSignature.setParameter(new PSSParameterSpec("SHA-512", "MGF1", MGF1ParameterSpec.SHA512, 32, 1));
 
         //Initialize Verifying of Signature and provide Public Key
@@ -40,15 +41,13 @@ public class RsaSignatureBouncyCastle {
         return pubSignature.verify(signature);
     }
 
-    public static void main(String args[]) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, NoSuchProviderException, InvalidAlgorithmParameterException {
-        Security.addProvider(new BouncyCastleProvider());
-        System.out.println("BouncyCastle - Security Provider added.");
-
-        KeyPair keyPair = RsaKeyGeneratorBouncyCastle.generateKeyPair();
+    public static void main(String args[]) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException,
+            InvalidAlgorithmParameterException {
+        KeyPair keyPair = RsaKeyGenerator.generateKeyPair();
         byte[] data = "hallo".getBytes();
         byte[] signature = sign(data, keyPair.getPrivate());
 
-        KeyPair keyPair2 = RsaKeyGeneratorBouncyCastle.generateKeyPair();
+        KeyPair keyPair2 = RsaKeyGenerator.generateKeyPair();
         byte[] data2 = "hallo2".getBytes();
         byte[] signature2 = sign(data2, keyPair2.getPrivate());
 
@@ -56,5 +55,4 @@ public class RsaSignatureBouncyCastle {
         System.out.println("Signature \"signature2\" was " + verify(data, signature2, keyPair2.getPublic()) + " for \"data\" ");
         System.out.println("Signature \"signature2\" was " + verify(data2, signature2, keyPair2.getPublic()) + " for \"data2\" ");
     }
-
 }

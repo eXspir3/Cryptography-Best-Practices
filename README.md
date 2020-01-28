@@ -10,6 +10,11 @@ Currently the following Crypto-Algo-Implementations are finished and to my best 
 
 ## Asymmetric-Encryption:
 * RSAAsymmetricEncryption.java using "RSA-4096 with OAEP-SHA512MGF1Padding"
+## Secure Hash-Functions
+* Argon2iHashSecure using Argon2i and explaining all parameters
+## General Hash-Functions
+* SHA512Hash
+* SHA256Hash
 
-### As you may have noticed this repo is work in Progress as only the RSAAsymmetricEncryption.java is currently finished.
+### As you may have noticed this repo is work in Progress.
 ### Several more Implementation will come next month

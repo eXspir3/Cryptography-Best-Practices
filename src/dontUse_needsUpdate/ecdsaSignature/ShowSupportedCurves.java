@@ -1,4 +1,4 @@
-package needsUpdate.ecdsaSignature;
+package dontUse_needsUpdate.ecdsaSignature;
 
 import java.security.Security;
 
@@ -9,8 +9,7 @@ import java.security.Security;
 //keine der Supporteten Kurven ist laut savecurves safe
 public class ShowSupportedCurves
 {
-    public static void main(String[] args)
-        throws Exception{
+    public static void main(String[] args) {
             String[] curves = Security.getProvider("SunEC").getProperty("AlgorithmParameters.EC SupportedCurves").split("\\|");
         for(String curve: curves)
             System.out.println(curve);

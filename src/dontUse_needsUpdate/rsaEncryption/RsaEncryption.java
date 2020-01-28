@@ -1,6 +1,4 @@
-package needsUpdate.rsaEncryption;
-
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+package dontUse_needsUpdate.rsaEncryption;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -12,11 +10,11 @@ import java.security.*;
 import java.security.spec.MGF1ParameterSpec;
 import java.util.Base64;
 
-public class RsaEncryptionBouncyCastle {
+public class RsaEncryption {
+
     public static byte[] encrypt(byte[] data, PublicKey publicKey) throws NoSuchPaddingException, NoSuchAlgorithmException,
-            BadPaddingException, InvalidKeyException, IllegalBlockSizeException, InvalidAlgorithmParameterException,
-            NoSuchProviderException {
-        Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA512AndMGF1Padding", "BC");
+            BadPaddingException, InvalidKeyException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
+        Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-512AndMGF1Padding");
         OAEPParameterSpec oaepParameterSpec = new OAEPParameterSpec("SHA-512", "MGF1",
                 MGF1ParameterSpec.SHA512, PSource.PSpecified.DEFAULT);
         cipher.init(Cipher.ENCRYPT_MODE, publicKey, oaepParameterSpec);
@@ -25,9 +23,8 @@ public class RsaEncryptionBouncyCastle {
     }
 
     public static byte[] decrypt(byte[] data, PrivateKey privateKey) throws BadPaddingException, IllegalBlockSizeException,
-            InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException,
-            NoSuchProviderException {
-        Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA512AndMGF1Padding", "BC");
+            InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException {
+        Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-512AndMGF1Padding");
         OAEPParameterSpec oaepParameterSpec = new OAEPParameterSpec("SHA-512", "MGF1",
                 MGF1ParameterSpec.SHA512, PSource.PSpecified.DEFAULT);
         cipher.init(Cipher.DECRYPT_MODE, privateKey, oaepParameterSpec);
@@ -35,9 +32,8 @@ public class RsaEncryptionBouncyCastle {
         return decryptData;
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchPaddingException, InvalidAlgorithmParameterException, NoSuchProviderException {
-        Security.addProvider(new BouncyCastleProvider());
-        KeyPair keyPair = RsaKeyGeneratorBouncyCastle.generateKeyPair();
+    public static void main(String[] args) throws NoSuchAlgorithmException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchPaddingException, InvalidAlgorithmParameterException {
+        KeyPair keyPair = RsaKeyGenerator.generateKeyPair();
         String testMessage = "hallo!";
         byte[] encryptedBytes = encrypt(testMessage.getBytes(), keyPair.getPublic());
         String decryptedMessage = new String(decrypt(encryptedBytes, keyPair.getPrivate()));

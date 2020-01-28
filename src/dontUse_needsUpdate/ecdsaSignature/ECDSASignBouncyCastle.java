@@ -1,4 +1,4 @@
-package needsUpdate.ecdsaSignature;
+package dontUse_needsUpdate.ecdsaSignature;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -10,7 +10,7 @@ public class ECDSASignBouncyCastle {
             InvalidKeyException, NoSuchProviderException {
 
         //Initialize ECDSA Signature with needsUpdate.SHA512
-        //It is required to use a Hash Function with Security Strength >= Security Strength of the used ECDSA epileptic Curve
+        //It is required to use a cryptographyJava.Hash Function with Security Strength >= Security Strength of the used ECDSA epileptic Curve
         //e.g. needsUpdate.SHA512 Security Strength = 256bit paired with "brainpoolP512r1" Curve = 256bit
         Signature ecSignature = Signature.getInstance("SHA512withECDSA", "BC");
 

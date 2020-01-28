@@ -18,17 +18,17 @@ public class SHA256Hash {
     public static final String ALGORITHM = "SHA-256";
 
     /**
-     * Generate a SHA256 Hash of a given PlainText
+     * Generate a SHA256 cryptographyJava.Hash of a given PlainText
      *
      * @param plainText plainText to be Hashed
-     * @return SHA256 Hash of plainText
+     * @return SHA256 cryptographyJava.Hash of plainText
      */
     public static String hash(String plainText) throws NoSuchAlgorithmException {
 
         //Static Instance for SHA256 Hashing
         MessageDigest messageDigest = MessageDigest.getInstance(ALGORITHM);
 
-        //digest () calculates SHA-256 Hash from plainText
+        //digest () calculates SHA-256 cryptographyJava.Hash from plainText
         byte[] digestedMessage = messageDigest.digest(plainText.getBytes());
 
         // Gets the Sign Representation of the digestedMessage

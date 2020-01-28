@@ -1,4 +1,4 @@
-package needsUpdate.rsaEncryption;
+package dontUse_needsUpdate.rsaSignature;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -6,12 +6,6 @@ import java.security.*;
 import java.security.spec.RSAKeyGenParameterSpec;
 
 public class RsaKeyGeneratorBouncyCastle {
-
-    //Generate RSA Key with size of at least 3072 bits
-    //Use "SecureRandom.getInstanceStrong()" for more secure Randomness
-    //For Availability Oriented Implementation use the nonBlocking "SecureRandom.getInstance()"
-    //If executed on Windows Systems, it is strongly advised not to use "SecureRandom.getInstance()" as this will trigger
-    //the insecure SHA1PRNG
 
     public static KeyPair generateKeyPair() throws InvalidAlgorithmParameterException, NoSuchProviderException, NoSuchAlgorithmException {
         Security.addProvider(new BouncyCastleProvider());

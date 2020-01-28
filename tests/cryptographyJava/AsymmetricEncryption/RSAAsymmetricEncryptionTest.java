@@ -1,6 +1,5 @@
-package AsymmetricEncryption;
+package cryptographyJava.AsymmetricEncryption;
 
-import cryptographyJava.AsymmetricEncryption.RSAAsymmetricEncryption;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
