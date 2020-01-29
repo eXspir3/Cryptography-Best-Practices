@@ -6,7 +6,7 @@ this Repo aims to get some Best-Practice-Implementations of common and secure Cr
 Only well-known / secure Libraries or the Standard-Libraries are used.  
 I aim to choose secure Paremters for the Cryptographic Functions and also explain them in the comments.
 
-Currently the following Crypto-Algo-Implementations are finished and to my best knowledge secure to use:
+Currently the following Crypto-Algo-Best-Practices are finished and to my best knowledge secure to use:
 
 ## Asymmetric-Encryption:
 * RSAAsymmetricEncryption.java using "RSA-4096 with OAEP-SHA512MGF1Padding"
