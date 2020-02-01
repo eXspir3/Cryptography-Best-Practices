@@ -115,7 +115,7 @@ public class Argon2iHashSecure {
         builder.withSecret(pepper);
 
         //Choose whether you want  Argon2d: 0, Argon2i: 1, Argon2id: 2, Argon2_version_10: 16, Argon2_version_13: 19
-        //Argon2i is recommended for plainText Hashing
+        //Argon2i is recommended for password Hashing
         builder.withVersion(Argon2Version.ARGON2_I.getIdentifier());
 
         Argon2Parameters parameters = builder.build();
