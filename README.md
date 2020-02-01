@@ -10,6 +10,10 @@ Currently the following Crypto-Algo-Best-Practices are finished and to my best k
 
 ## Asymmetric-Encryption:
 * RSAAsymmetricEncryption.java using "RSA-4096 with OAEP-SHA512MGF1Padding"
+## Symmetric-Encryption:
+* ChaCha20-Poly1305 Authenticated Encryption using 256bit Keys
+## Digital-Signatures:
+* ECDSA Signatures using Standard Java11 Elliptic Curves - get supported curves by running CryptoHelper.ShowSupportedECCurves
 ## Secure Hash-Functions
 * Argon2iHashSecure using Argon2i and explaining all parameters
 ## General Hash-Functions
