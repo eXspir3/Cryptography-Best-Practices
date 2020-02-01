@@ -1,4 +1,4 @@
-package dontUse_needsUpdate.ecdsaSignature;
+package cryptographyJava.CryptoHelper;
 
 import java.security.Security;
 
@@ -7,7 +7,7 @@ import java.security.Security;
 //Refer to http://safecurves.cr.yp.to for a list of save epileptic curves
 
 //keine der Supporteten Kurven ist laut savecurves safe
-public class ShowSupportedCurves
+public class ShowSupportedECCurves
 {
     public static void main(String[] args) {
             String[] curves = Security.getProvider("SunEC").getProperty("AlgorithmParameters.EC SupportedCurves").split("\\|");
