@@ -1,3 +1,4 @@
+# DO NOT USE A RANDOM GITHUB REPO FOR CRYPTOGRAPHY - this was made only for my own education and is probably not secure!
 # Java-Cryptography-Best-Practices
 
 As *cybersecurity* gets more relevent every day and examples of *secure Implementations* are often hard to come by -  
